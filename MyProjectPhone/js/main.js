@@ -37,13 +37,13 @@ window.onload = function() {
     });
     
     app_store.load(device_controller);
-	device_discover_manager.set_discover_callback(
+	discover_manager.set_discover_callback(
 			function(id, description){ 
 		    	console.log("found device " + description);
-		    	device_discover_manager.add_discovered_device(id, description);    		    	
+		    	discover_manager.add_discovered_device(id, description);    		    	
 	});
-	device_discover_manager.set_discover_completed_callback(function(){
-		device_discover_manager.discover_finished();
+	discover_manager.set_discover_completed_callback(function(){
+		discover_manager.discover_finished();
 	});
 
 };

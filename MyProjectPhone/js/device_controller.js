@@ -48,14 +48,13 @@
 	    	left_down : left_down,
 	    	right_up : right_up,
 	    	right_down : right_down,
-	    	pause : pause,
 	    	restart : restart
 	    };
 	    
 	}
 	
 	function set_working_device(ip, port, description){
-		var id = device_discover_manager.add_device(ip, port, description);
+		var id = discover_manager.add_device(ip, port, description);
 		set_device(id);
 	}
 	
@@ -68,7 +67,7 @@
 	{
 		console.log("[device_controller::set_device] - device " + id + " was set as current");
 		device_id = id;
-		device = device_discover_manager.get_device_info(id);
+		device = discover_manager.get_device_info(id);
 		
 		if (device){
 	        msf.remote('http://' + device.ip + ':' + device.port +'/api/v2/', function (error, tv) {

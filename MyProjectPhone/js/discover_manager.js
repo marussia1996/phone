@@ -26,7 +26,7 @@
 
        
 	// loader
-	function device_discover_manager() {
+	function discover_manager() {
 	    return {
 	    	start_discover : start_discover,
 	    	get_device_info : get_device_info, 
@@ -106,7 +106,9 @@
 	
 	function insert_test_tvs()
 	{
-		add_device("192.168.1.191", 8001, "TV(SMTV)");		
+		
+		add_device("192.168.26.101", 26101, "МММ");
+		
 	}
 	
 	function add_discovered_device(id, description)
@@ -126,6 +128,6 @@
 		fsm.event_discover_ok();
 	}
 
-	window.device_discover_manager = device_discover_manager();
+	window.discover_manager = discover_manager();
 }());
 

@@ -67,7 +67,7 @@ var app_store  = {
     db_action: function(action) {
         console.log('[app_store::db_action] laoding ');
     	
-        var request = indexedDB.open("handy_tv_store", 1),
+        var request = indexedDB.open("handy_tv_store", 1);
             store_name = this.get_object_store_name();
 
         request.onupgradeneeded = function() {
@@ -87,6 +87,7 @@ var app_store  = {
             	transaction = db.transaction([store_name], "readwrite");
             
             action(transaction.objectStore(store_name));
+            console.log("success op with db");
         };
     },
     load: function(devcontroller){
